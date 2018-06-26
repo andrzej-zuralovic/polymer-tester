@@ -20,13 +20,6 @@ RUN mv /usr/bin/google-chrome /usr/bin/google-chrome-orig \
 
 RUN apt-get install -qq -y xvfb
 
-#install firefox
-RUN apt-get install -qq -y pkg-mozilla-archive-keyring \
-    && echo "deb http://mozilla.debian.net/ jessie-backports firefox-release" >>  /etc/apt/sources.list \
-    && apt-get update -qq \
-    && apt-get install -qq -y pkg-mozilla-archive-keyring firefox
-
-
 #install Java 8
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | tee /etc/apt/sources.list.d/webupd8team-java.list \
     && echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | tee -a /etc/apt/sources.list.d/webupd8team-java.list \
