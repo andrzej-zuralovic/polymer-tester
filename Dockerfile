@@ -33,7 +33,7 @@ RUN npm install -g bower \
     && echo '{ "allow_root": true, "gitUseHttps": true }' > ~/.bowerrc \
     && echo "N\n" | bower
 
-RUN npm install -g polymer-cli
+RUN sudo npm install -g polymer-cli --unsafe-perm
 ADD startup.sh /
 
 RUN chmod +x /startup.sh
